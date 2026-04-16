@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOU ANGOLANO - Conhecimento vale Ouro</title>
+<!-- UTMify Pixel -->
+	<script>
+  window.pixelId = "69c2faeaebc40da953b4e47d";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+	
+	<!-- UTMify UTMs Script -->
+	<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
+	
+<style>
+body{
+    margin:0;
+    padding:0;
+    background:#000;
+    font-family: Arial, sans-serif;
+    text-align:center;
+}
+
+/* IMAGEM TOPO */
+.topo-img{
+    width:100%;
+    max-width:500px;
+    margin:0 auto;
+    display:block;
+}
+
+/* CONTADOR */
+.contador-box{
+    background:#E31B23;
+    color:#fff;
+    padding:20px;
+    font-weight:bold;
+}
+
+#contador{
+    font-size:48px;
+    letter-spacing:2px;
+}
+
+/* CHECKOUT */
+.checkout-container{
+    width:100%;
+    position:relative;
+    padding-top:170%;
+}
+
+.checkout-container iframe{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    border:none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- IMAGEM -->
+<img src="topo.png" class="topo-img">
+
+<!-- CONTADOR -->
+<div class="contador-box">
+    <div>TEMPO LIMITADO</div>
+    <div id="contador">05:00</div>
+</div>
+
+<!-- CHECKOUT -->
+<div class="checkout-container">
+    <iframe 
+        src="https://www.kintu.org/product/9396142b-c113-42dd-9fe1-4a29eb442c02"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<script>
+let tempo = 300; // 5 minutos
+
+const contador = document.getElementById("contador");
+
+const intervalo = setInterval(() => {
+
+    const minutos = Math.floor(tempo / 60);
+    const segundos = tempo % 60;
+
+    contador.textContent =
+        String(minutos).padStart(2, "0") + ":" +
+        String(segundos).padStart(2, "0");
+
+    tempo--;
+
+    if (tempo < 0) {
+        clearInterval(intervalo);
+        contador.textContent = "00:00";
+    }
+
+}, 1000);
+</script>
+
+</body>
+</html>
+
+
+
+
+
