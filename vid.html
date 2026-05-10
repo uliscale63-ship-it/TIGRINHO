@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -7,119 +8,232 @@
     <meta name="description" content="Acessse o link">
     <meta name="author" content="Lovable">
     <link rel="stylesheet" href="indexa.css">
+
+    <style>
+
+        body{
+            margin:0;
+            padding:0;
+            font-family:Arial, sans-serif;
+            background:rgb(16, 19, 24);
+        }
+
+        /* CONTAINER PRINCIPAL */
+        .min-h-screen{
+            min-height:100vh;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            padding:20px 15px;
+        }
+
+        /* TITULO */
+        h1{
+            color:gold;
+            text-align:center;
+            font-size:28px;
+            line-height:1.4;
+            max-width:900px;
+            margin-bottom:25px;
+        }
+
+        /* VIDEO VERTICAL */
+        .video-container{
+            width:100%;
+            max-width:400px;
+            aspect-ratio:9/16;
+            position:relative;
+            margin:auto;
+            border-radius:20px;
+            overflow:hidden;
+            box-shadow:0 0 25px rgba(255,215,0,0.35);
+        }
+
+        .video-container iframe{
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            border:none;
+        }
+
+        /* BOTÃO */
+        .cta-btn{
+            display:inline-block;
+            padding:18px 35px;
+            font-size:18px;
+            font-weight:bold;
+            color:#000;
+            text-decoration:none;
+            border-radius:50px;
+            background:linear-gradient(135deg,#FFD700,#FFA500,#FF8C00);
+            box-shadow:0 0 20px rgba(255,165,0,0.6);
+            transition:all 0.3s ease;
+        }
+
+        .cta-btn:hover{
+            transform:scale(1.08);
+        }
+
+        /* CONTADOR ONLINE */
+        #online-box{
+            position:fixed;
+            top:10px;
+            right:10px;
+            background:#111;
+            color:#00ff00;
+            padding:8px 12px;
+            border-radius:8px;
+            font-size:13px;
+            font-weight:bold;
+            z-index:999;
+        }
+
+        /* NOTIFICAÇÃO */
+        .notif-wpp{
+            position:fixed;
+            top:70px;
+            right:10px;
+            background:#000;
+            color:#fff;
+            padding:10px;
+            border-radius:10px;
+            display:none;
+            align-items:center;
+            gap:10px;
+            z-index:999;
+        }
+
+        .emoji{
+            font-size:22px;
+        }
+
+        .notif-texto{
+            display:flex;
+            flex-direction:column;
+        }
+
+        /* RESPONSIVO */
+        @media(max-width:480px){
+
+            h1{
+                font-size:21px;
+            }
+
+            .video-container{
+                max-width:95%;
+            }
+
+            .cta-btn{
+                width:100%;
+                max-width:320px;
+                font-size:16px;
+            }
+
+        }
+
+    </style>
+
 </head>
 
 <body>
 
-    <div class="min-h-screen flex flex-col items-center px-4 py-8" style="background: rgb(16, 19, 24);">
+    <div class="min-h-screen">
 
-        <h1 style="color: gold; text-align:center;">
+        <h1>
             ASSISTA O VÍDEO ABAIXO PARA VER COMO RECEBER O SEU DINHEIRO AGORA MESMO
         </h1>
 
-        <!-- ✅ VÍDEO AGORA EM FORMATO VERTICAL -->
-        <!-- ✅ VÍDEO AGORA FUNCIONAL -->
-<div style="width:100%; max-width:500px; aspect-ratio: 9/16; margin-top:20px;">
-    <iframe id="panda-9456598a-6116-4210-9c07-f89f522e8209" src="https://player-vz-6aa90485-a47.tv.pandavideo.com/embed/?v=9456598a-6116-4210-9c07-f89f522e8209" style="border:none;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" allowfullscreen=true width="720" height="360" fetchpriority="high"></iframe>
-</div>
+        <!-- VIDEO VERTICAL -->
+        <div class="video-container">
 
-        <!-- BOTÃO (mantido igual) -->
-        <div id="cta-container" style="display: none; text-align: center; margin-top: 20px;">
+            <iframe 
+                id="panda-9456598a-6116-4210-9c07-f89f522e8209"
+                src="https://player-vz-6aa90485-a47.tv.pandavideo.com/embed/?v=9456598a-6116-4210-9c07-f89f522e8209"
+                allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
+                allowfullscreen
+                fetchpriority="high">
+            </iframe>
+
+        </div>
+
+        <!-- BOTÃO -->
+        <div id="cta-container" style="display:none; text-align:center; margin-top:20px;">
+
             <a href="checkaut.html" class="cta-btn">
                 💰 Pagar Taxa Anti-Robô
             </a>
+
         </div>
 
     </div>
 
     <!-- CONTADOR ONLINE -->
-    <div id="online-box">👥 <span id="online-count">127</span> pessoas online agora</div>
+    <div id="online-box">
+        👥 <span id="online-count">127</span> pessoas online agora
+    </div>
 
     <!-- NOTIFICAÇÃO -->
     <div id="notif-wpp" class="notif-wpp">
+
         <div class="emoji">✅</div>
+
         <div class="notif-texto">
             <strong id="notif-nome"></strong>
             <span id="notif-msg"></span>
         </div>
+
     </div>
 
-    <style>
-        .cta-btn {
-            display: inline-block;
-            padding: 18px 35px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #000;
-            text-decoration: none;
-            border-radius: 50px;
-            background: linear-gradient(135deg, #FFD700, #FFA500, #FF8C00);
-            box-shadow: 0 0 20px rgba(255, 165, 0, 0.6);
-            transition: all 0.3s ease;
-        }
-
-        .cta-btn:hover {
-            transform: scale(1.08);
-        }
-
-        #online-box {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background: #111;
-            color: #00ff00;
-            padding: 8px 12px;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-        .notif-wpp {
-            position: fixed;
-            top: 70px;
-            right: 10px;
-            background: #000;
-            color: #fff;
-            padding: 10px;
-            border-radius: 10px;
-            display: none;
-        }
-    </style>
-
     <script>
+
         // MOSTRAR BOTÃO APÓS 6min27s
         setTimeout(function () {
+
             document.getElementById("cta-container").style.display = "block";
+
         }, 387000);
 
         // CONTADOR ONLINE
-        function atualizarOnline() {
+        function atualizarOnline(){
+
             const numero = Math.floor(Math.random() * (320 - 120)) + 120;
+
             document.getElementById("online-count").innerText = numero;
         }
+
         setInterval(atualizarOnline, 3000);
 
         // NOTIFICAÇÕES
         const pessoas = ["Carlos", "Ana", "Domingos", "Edna"];
+
         const provincias = ["Luanda", "Benguela", "Huambo"];
 
-        function mostrarNotif() {
+        function mostrarNotif(){
+
             const nome = pessoas[Math.floor(Math.random() * pessoas.length)];
+
             const provincia = provincias[Math.floor(Math.random() * provincias.length)];
 
             document.getElementById("notif-nome").innerText = nome;
+
             document.getElementById("notif-msg").innerText =
                 " acabou de levantar dinheiro em " + provincia;
 
             const box = document.getElementById("notif-wpp");
-            box.style.display = "block";
+
+            box.style.display = "flex";
 
             setTimeout(() => {
+
                 box.style.display = "none";
+
             }, 4000);
         }
 
         setInterval(mostrarNotif, 8000);
+
     </script>
 
 </body>
